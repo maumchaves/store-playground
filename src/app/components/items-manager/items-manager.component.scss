@@ -1,0 +1,53 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+header .row {
+    .left-side input {
+      font-size: 14px;
+      max-width: 400px;
+      @include border-radius(30px);
+      width: 60%;
+    }
+    .right-side .btn-favorites {
+      font-size: 14px;
+      height: 100%;
+      border: none;
+      @include border-radius(0px);
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      i, span {
+        vertical-align: inherit;
+      }
+      i {
+        margin-left: -2px;
+      }
+      span {
+        display: none;
+      }
+      &:hover {
+        border-bottom-color: $store-bg-primary;
+      }
+    }
+}
+
+.pagination-bar {
+  justify-content: center;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  header .row {
+    .left-side input {
+      width: 80%;
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+  // header .row {
+  //   .left-side input {
+  //     width: 60%;
+  //   }
+  // }
+}

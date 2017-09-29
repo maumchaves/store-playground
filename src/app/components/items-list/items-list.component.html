@@ -1,0 +1,46 @@
+<div class="items-list">
+  <ng-container *ngIf="items; else loader">
+    <div *ngIf="items | sortItems:sortProperty | favoriteItems:enableFavoriteFilter |
+    filter:search | countList:transfListCounter | slice:startFrom:startFrom+limit as result"
+    [ngSwitch]="result.length > 0" class="row">
+      <ng-container *ngSwitchCase="true">
+        <div *ngFor="let item of result" class="item col col-md-6">
+          <div class="item-list-card bg-white" [ngClass]="{'lite-list-card': liteList}">
+            <div class="media">
+              <a routerLink="/item/{{item.id}}" class="picture-link" role="button">
+                <img class="d-flex align-self-start mr-3 picture"
+                src="assets/images/items/{{item.image}}" alt="{{item.image}}">
+              </a>
+              <div class="media-body">
+                <div class="d-flex top-bar">
+                  <h4 class="price mt-0 mb-1 mb-lg-2">{{item.price}}€</h4>
+                  <i (click)="toggleFavorite(item)" class="material-icons">
+                    {{item.favorite ? 'favorite' : 'favorite_border'}}
+                  </i>
+                </div>
+                <h5 class="title text-truncate mb-1">
+                  <a class="btn p-0" routerLink="/item/{{item.id}}"
+                  role="button">{{item.title}}</a>
+                </h5>
+                <div class="email text-truncate mb-lg-1">
+                  <a href="mailto:{{item.email}}" target="_blank">{{item.email}}</a>
+                </div>
+                <p class="description text-truncate d-lg-block">{{item.description}}</p>
+                <a class="btn-details btn btn-sm bg-white"
+                routerLink="/item/{{item.id}}" role="button">See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <div class="col not-found">No items found.</div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #loader>
+    <div class="loader-wrapper row pt-5 pb-5">
+      <div class="loader"></div>
+    </div>
+  </ng-template>
+</div>

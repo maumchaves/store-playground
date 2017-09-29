@@ -1,0 +1,38 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.item-container {
+  max-width: 600px;
+  .item-details {
+    @include border-radius(10px);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.1), 0 2px 5px 0 transparent;
+    .picture-container {
+      text-align: center;
+    }
+    .picture {
+      display: inline-block;
+      img {
+        @include border-radius(10px);
+        max-height: 280px;
+      }
+    }
+    .top-bar {
+      justify-content: space-between;
+      align-items: end;
+      .material-icons {
+        cursor: pointer;
+      }
+    }
+    .price {
+      font-weight: bolder;
+    }
+    .email {
+      word-wrap: break-word;
+      max-width: 100%;
+      font-size: .9rem;
+    }
+    .description {
+      font-size: .9rem;
+    }
+  }
+}

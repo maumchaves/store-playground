@@ -1,0 +1,20 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.toolbar {
+  font-size: .8rem;
+  .d-flex {
+    align-items: center;
+  }
+  .btn {
+    font-size: .8rem;
+    margin: 0 8px;
+    background-color: $store-bg-primary;
+    color: #fff;
+    padding: 2px 10px;
+    @include border-radius(6px);
+  }
+  .dropdown-item {
+    font-size: .8rem;
+  }
+}

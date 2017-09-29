@@ -1,0 +1,25 @@
+@import './../../../styles/mixins.scss';
+
+.items-list-modal {
+  @include border-radius(10px);
+}
+
+::ng-deep .items-list-modal .not-found {
+  text-align: center;
+}
+
+.search-input {
+  font-size: 0.85rem;
+  @include border-radius(30px);
+  width: 100%;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  ::ng-deep .items-list-modal .items-list {
+    .item {
+      max-width: 100%;
+      flex: auto;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div class="row toolbar mb-4">
+  <div class="col d-flex">
+    Sort by:
+    <div class="dropdown">
+      <button class="btn btn-sm dropdown-toggle" type="button" id="sortByDropdown"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{selectedSortProp}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button *ngFor="let sortProp of sortProperties" (click)="onSelectSortProp(sortProp)"
+        class="dropdown-item" type="button" [hidden]="sortProp === selectedSortProp">
+        {{sortProp}}</button>
+      </div>
+    </div>
+  </div>
+</div>

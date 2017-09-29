@@ -1,0 +1,25 @@
+<header class="container-fluid bg-white sticky-top">
+  <div class="row">
+    <div class="left-side col pl-0">
+      <img src="assets/images/ic-logo-web.svg" alt="Wallapop Logo">
+      <button (click)="goBack()" class="btn btn-sm btn-outline-secondary ml-3">Back</button>
+    </div>
+  </div>
+</header>
+
+<div class="item-container container mt-5">
+  <div *ngIf="item" class="item-details bg-white p-3">
+    <div class="picture-container mb-4">
+      <div class="picture">
+        <img class="img-fluid" src="assets/images/items/{{item.image}}" alt="{{item.image}}">
+      </div>
+    </div>
+    <div class="top-bar d-flex">
+      <h4 class="price mt-0">{{item.price}}€</h4>
+      <i (click)="toggleFavorite(item)" class="material-icons">{{item.favorite ? 'favorite' : 'favorite_border'}}</i>
+    </div>
+    <h5 class="title mb-1">{{item.title}}</h5>
+    <div class="email mb-2"><a href="mailto:{{item.email}}" target="_blank">{{item.email}}</a></div>
+    <p class="description pt-3">{{item.description}}</p>
+  </div>
+</div>

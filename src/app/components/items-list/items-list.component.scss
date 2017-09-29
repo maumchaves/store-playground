@@ -1,0 +1,121 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.item-list-card {
+  @include border-radius(10px);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.1), 0 2px 5px 0 transparent;
+  font-size: 12px;
+  margin-bottom: 1rem;
+  .media-body {
+    padding: 4px 15px 4px 0;
+    min-width: 0;
+  }
+  .top-bar {
+    justify-content: space-between;
+    align-items: center;
+    .material-icons {
+      cursor: pointer;
+    }
+  }
+  .picture {
+    @include border-radius(10px);
+    padding: 4px 0 4px 4px;
+    max-width: 100px;
+    cursor: pointer;
+  }
+  .price {
+    font-weight: bolder;
+  }
+  .title {
+    a {
+      color: inherit;
+      font-size: inherit;
+      border: none;
+      margin-left: -1px
+    }
+  }
+  .email {
+    margin-bottom: 7px;
+  }
+  .description {
+    font-style: italic;
+    margin-bottom: 14px;
+    display: none;
+  }
+  .btn-details {
+    font-size: 12px;
+    color: $store-text-primary;
+    border-color: $store-bg-primary;
+    padding: 1px 10px;
+    min-width: 50px;
+    @include border-radius(6px);
+  }
+}
+
+.lite-list-card {
+  .price, .email, .description, .btn-details {
+    display: none !important;
+  }
+  .title {
+    margin-top: -2px;
+    padding-right: 25px;
+    font-size: 1.1rem;
+    a {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+  .top-bar {
+    justify-content: flex-end;
+  }
+  .picture {
+    max-width: 60px;
+  }
+  .picture-link {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) {
+  .item-list-card {
+    .top-bar {
+      .material-icons {
+        font-size: 1.3rem;
+      }
+    }
+    .price {
+      font-size: 1.2rem;
+    }
+    h5.title {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .item-list-card:not(.lite-list-card) {
+    margin-bottom: 1.8rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .item-list-card:not(.lite-list-card) {
+    margin-bottom: 2rem;
+    font-size: 14px;
+    .picture {
+      max-width: 150px;
+    }
+    .price {
+      font-size: 1.5rem;
+    }
+  }
+  .lite-list-card {
+    .title {
+      margin-top: -9px
+    }
+  }
+}

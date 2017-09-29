@@ -1,0 +1,33 @@
+<header class="container-fluid bg-white sticky-top">
+  <div class="row">
+    <div class="left-side col-10 col-sm-8 pl-0">
+      <img src="assets/images/ic-logo-web.svg" alt="Wallapop Logo">
+      <input type="text" class="form-control ml-2" placeholder="Search"
+      [(ngModel)]="searchTerm" aria-label="Search">
+    </div>
+    <div class="right-side col-2 col-sm-4 pr-0">
+      <button class="btn btn-favorites bg-white" type="button"
+        (click)="openFavorites()">
+        <i class="material-icons">favorite</i>
+        <span class="d-sm-inline-block">Favorites</span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="container mt-5">
+  <toolbar [(selectedSortProp)]="sortProperty"></toolbar>
+  <items-list
+    [startFrom]="getFirstIndexIn(page)"
+    [limit]="limitShownItems"
+    [sortProperty]="sortProperty"
+    [search]="searchTerm"
+    (onTransfListSizeChange)="updateCollectionSize($event)">
+  </items-list>
+  <div class="row pagination-bar">
+    <ngb-pagination class="d-none d-sm-block" [collectionSize]="collectionSize"
+      [pageSize]="limitShownItems" [(page)]="page" aria-label="Pagination"></ngb-pagination>
+    <ngb-pagination class="d-block d-sm-none" [collectionSize]="collectionSize"
+      [pageSize]="limitShownItems" [maxSize]="3" [ellipses]="false" [(page)]="page"
+      aria-label="Pagination"></ngb-pagination>
+  </div>
+</div>
