@@ -1,8 +1,10 @@
 # Store Playground
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+Store Playground is a personal project aimed to explore and play with technologies such as Angular, TypeScript, Jasmine, Sass, Bootstrap, and others.
 
 [Live application here](http://store-playground.s3-website-eu-west-1.amazonaws.com), hosted on [AWS S3](https://aws.amazon.com/es/s3).
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
 ### Features
 
